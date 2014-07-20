@@ -1,0 +1,6 @@
+{
+    "Host": "redis.ci.host.com",
+    "Port": 6379,
+    "Username": "ciuser",
+    "Password": "cipassword"
+}

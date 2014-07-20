@@ -1,0 +1,7 @@
+{
+    "Host": "redis.host.com",
+    "Port": 6379,
+    "Username": "test",
+    "Password": "password",
+    "OptionOnlyInBase": "someoption"
+}

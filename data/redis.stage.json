@@ -1,0 +1,6 @@
+{
+    "Host": "redis.stage.host.com",
+    "Port": 8080,
+    "Username": "stageuser",
+    "Password": "stagepassword"
+}

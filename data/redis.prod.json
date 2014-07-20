@@ -1,0 +1,6 @@
+{
+    "Host": "redis.prod.host.com",
+    "Port": 9990,
+    "Username": "produser",
+    "Password": "prodpassword"
+}
