@@ -1,0 +1,7 @@
+{
+    "Host": "stage.host.com",
+    "Port": 27017,
+    "Username": "someusername",
+    "Password": "secretpassword",
+    "OptionOnlyInBase": "someoption"
+}

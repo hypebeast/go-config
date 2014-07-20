@@ -1,0 +1,7 @@
+{
+    "Host": "ci.host.com",
+    "Port": 27017,
+    "Username": "someusername",
+    "Password": "password",
+    "OptionOnlyInBase": "someoption"
+}

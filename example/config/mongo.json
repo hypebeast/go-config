@@ -1,0 +1,7 @@
+{
+    "Host": "localhost",
+    "Port": 27017,
+    "Username": "dev",
+    "Password": "dev",
+    "OptionOnlyInBase": "someoption"
+}

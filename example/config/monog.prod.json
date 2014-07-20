@@ -1,0 +1,7 @@
+{
+    "Host": "prod.host.com",
+    "Port": 27017,
+    "Username": "someusername",
+    "Password": "supersecretpassword",
+    "OptionOnlyInBase": "someoption"
+}
