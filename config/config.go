@@ -1,3 +1,7 @@
+// go-config makes it simple to work with cascading configuration files.
+// You can define your options for every environment in different configuration
+// files and load them in according to the set environment.
+
 package config
 
 import (
@@ -17,9 +21,9 @@ var basePath string
 var env string
 var configs Configs
 
-// Init initalize the config system with the given base path.
-func Init(dir string, environment string) error {
-	var err error
+// Init sets the base directory and the name of the environment variable that contains
+// the active domain.
+func Init(dir string, environment string) (err error) {
 	basePath = dir
 	configFiles, err := ioutil.ReadDir(basePath)
 	if err != nil {
@@ -32,7 +36,8 @@ func Init(dir string, environment string) error {
 	return nil
 }
 
-// Get returns the config for the given domain.
+// Get reads the config options for the given domain and writes the values in the
+// given struct. If any error
 func Get(domain string, rawVal interface{}) (err error) {
 	if _, ok := configs[domain]; ok {
 		rawVal = configs[domain]
