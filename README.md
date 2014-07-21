@@ -1,6 +1,6 @@
 # go-config
 
-go-config is a simple library that reads config options from JSON files and has support to load different options accordingly to a set environment variable.
+go-config makes it simple to work with cascading configuration files. You can define your options for every environment in different configuration files and load them accordingly to the set environment.
 
 ## Overview
 
@@ -8,8 +8,48 @@ TODO
 
 ## Usage
 
+Place your configuration files in a directory (e.g. config). Configuration files need to be valid JSON files, terminated by .json.
+
+The following example loads and parses options from *base.json* in the *config*directory:
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/hypebeast/go-config/config"
+)
+
+type BaseConfig struct {
+    Host    string
+    Port    int
+}
+
+func main() {
+    // Initialize the config system
+    config.Init("config", "")
+
+    // Get the base config
+    config.Get("base", &baseConfig)
+}
+```
+
+### Environment Specific Files
+
+TODO
+
+## Examples
+
 TODO
 
 ## License
 
-TODO
+The MIT License (MIT)
+
+Copyright (c) 2014 Sebastian Ruml
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
