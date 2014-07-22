@@ -8,7 +8,7 @@ go-config makes it simple to work with cascading configuration files. It allows 
 
 Place your configuration files in a directory (e.g. config). Configuration files need to be valid JSON files, terminated by .json.
 
-The following example loads and parses options from *base.json* in the *config*directory:
+The following example loads and parses options from *base.json* in the *config* directory:
 
 ```go
 package main
