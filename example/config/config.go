@@ -31,10 +31,7 @@ var mongoConfig MongoConfig
 
 func init() {
 	// Initialize the config system
-	err := config.Init("config", "GOENV")
-	if err != nil {
-		panic(err)
-	}
+	config.Init("config", "GOENV")
 
 	// Get the base config
 	config.Get("base", &baseConfig)

@@ -1,3 +1,5 @@
+// Copyright 2014 Sebastian Ruml <sebastian.ruml@gmail>. All rights reserved.
+
 package config
 
 import (
