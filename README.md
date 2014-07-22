@@ -1,10 +1,8 @@
 # go-config
 
-go-config makes it simple to work with cascading configuration files. You can define your options for every environment in different configuration files and load them accordingly to the set environment.
+Configuration file parser for JSON format.
 
-## Overview
-
-TODO
+go-config makes it simple to work with cascading configuration files. It allows you to use cascading configuration files (e.g. one configuration for every environment). You can define options for every environment in different configuration files and load them accordingly to the set environment.
 
 ## Usage
 
@@ -34,13 +32,47 @@ func main() {
 }
 ```
 
-### Environment Specific Files
+### Environment Specific Files and Cascading
 
-TODO
+Inside the configuration directory you can have configurations for different environments.
 
-## Examples
+**Example**
 
-TODO
+You can have your basic options in *mongo.json* that is loaded when no environment is specified and a *mongo.stage.json* file that is loaded when the environment variable (the name of the environment variable can be set during initialization) is set to *stage*.
+
+Configuration options in *mongo.json* will be merged with the options from *mongo.stage.json*.
+
+## Example
+
+The follwoing examples shows the content *mongo.js*:
+
+```json
+{
+    "Host": "localhost",
+    "Port": 27017
+}
+```
+
+And you have a *mongo.stage.json* file with the following content:
+
+```json
+{
+    "Host": "mongo-stage.host.com"
+}
+```
+
+The resulting configuration for the *stage* environment will be:
+
+```json
+{
+    "Host": "mongo-stage.host.com",
+    "Port": 27017
+}
+```
+
+## Credits
+
+This library was inspired by [konphyg](https://github.com/pgte/konphyg).
 
 ## License
 
