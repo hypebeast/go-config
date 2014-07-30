@@ -8,6 +8,14 @@ go:
 install:
   - go get github.com/mitchellh/mapstructure
   - go get github.com/smartystreets/goconvey/convey
+  - go get code.google.com/p/go.tools/cmd/cover
   - go get github.com/hypebeast/go-config/config
   - go get github.com/hypebeast/go-config/example/config
   - go get github.com/hypebeast/go-config/example
+  - go get github.com/axw/gocov/gocov
+  - go get github.com/mattn/goveralls
+  - go get code.google.com/p/go.tools/cmd/cover
+
+script:
+    - go test -v -covermode=count -coverprofile=coverage.out
+    - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
